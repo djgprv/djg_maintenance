@@ -51,6 +51,7 @@
 		'Maintenance mode has been disabled by :username.' => 'Tryb konserwacji został wyłączony przez :username.',
 
 		// ver 0.0.8
+		'Maintenance' => 'Maintenance',
 		'exception' => 'wykluczenie',
 		'no exception' => 'bez wykluczenia',
     );

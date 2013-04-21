@@ -51,6 +51,7 @@
 		'Maintenance mode has been disabled by :username.' => 'Maintenance mode has been disabled by :username.',
 
 		// ver 0.0.8
+		'Maintenance' => 'Maintenance',
 		'exception' => 'exception',
 		'no exception' => 'no exception',
     );

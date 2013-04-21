@@ -13,7 +13,7 @@ Plugin::setInfos(array(
     'id'          => 'djg_maintenance',
     'title'       => __('[djg] Maintenance'),
     'description' => __('Helps you to take your site offline for a short time sending correct HTTP header.'),
-    'version'     => '0.0.9a',
+    'version'     => '0.0.9',
     'author'      => 'Michał Uchnast',
     'website'     => 'http://www.kreacjawww.pl/',
     'update_url'  => 'http://kreacjawww.pl/public/wolf_plugins/plugin-versions.xml'
