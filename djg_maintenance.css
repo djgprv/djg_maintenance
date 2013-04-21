@@ -1,0 +1,7 @@
+.kreacjawww {background-color: #fff;  padding: 4px;}
+.kreacjawww span {background: url('images/16_poland.png') no-repeat left center; padding-left: 20px;}
+#djg_maintenance a{cursor: pointer;}
+#djg_maintenance a:hover{text-decoration:underline;}
+#djg_maintenance .green {color: green;}
+#djg_maintenance .red {color: red;}
+#djg_maintenance input.global_ip, #djg_maintenance input.backdoor_key {width: 300px; padding: 5px;}
