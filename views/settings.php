@@ -105,10 +105,11 @@
     }
 
     $(document).ready(function () {
-        // Prevent accidentally navigating away
+		// Prevent accidentally navigating away
         $(':input').bind('change', function () {
             setConfirmUnload(true);
         });
+		
         $('form').submit(function () {
             setConfirmUnload(false);
             return true;
@@ -119,10 +120,10 @@
             return false;
         });
         
-      $("#resetIp").live("click", function (event) {
-        $("input[name=global_ip]").val('0.0.0.0');
-        return false;
-      });
+		$("#resetIp").live("click", function (event) {
+			$("input[name=global_ip]").val('0.0.0.0');
+			return false;
+		});
 
         $("#keygen").live("click", function (event) {
             $("input[name=backdoor_key]").val('').val($("input[name=backdoor_key]").val() + password(8));
