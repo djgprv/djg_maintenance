@@ -9,7 +9,6 @@ FUNCTIONALITY
 * access via global IPs
 * available exceptions for selected pages
 
-ICON USED
+ICONS
 ----
-
-* Eightyshades by Victor Erixon: http://www.iconfinder.com/search/?q=iconset%3Aeightyshades
+* http://www.iconfinder.com/search/?q=iconset%3Afatcow
