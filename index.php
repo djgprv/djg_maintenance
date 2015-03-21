@@ -13,21 +13,39 @@ Plugin::setInfos(array(
     'id'          => 'djg_maintenance',
     'title'       => __('[djg] Maintenance'),
     'description' => __('Helps you to take your site offline for a short time sending correct HTTP header.'),
-    'version'     => '0.0.9',
+    'version'     => '0.10',
     'author'      => 'Michał Uchnast',
     'website'     => 'http://www.kreacjawww.pl/',
     'update_url'  => 'http://kreacjawww.pl/public/wolf_plugins/plugin-versions.xml'
 ));
 
+/**
+ * Root location where djg_maintenance plugin lives.
+ */
+define('DJG_MAINTENANCE_ROOT', PATH_PUBLIC.'wolf/plugins/djg_maintenance');
+
 Behavior::add('djg_maintenance', '');
 Observer::observe('page_requested', 'maintenance_page_requested');
-Observer::observe('view_page_edit_plugins', 'djg_maintenance_checkbox');
-function djg_maintenance_checkbox(&$page)
+Observer::observe('view_page_edit_plugins', 'djg_maintenance_display_dropdown');
+Observer::observe('page_add_after_save',  'djg_maintenance_on_page_saved');
+Observer::observe('page_edit_after_save', 'djg_maintenance_on_page_saved');
+
+function djg_maintenance_on_page_saved($page) {
+    $status = 0;
+    $input = $_POST['page'];
+
+    if (isset($input['djg_maintenance']) && is_int((int)$input['djg_maintenance']))
+        $status = $input['djg_maintenance'];
+
+    Record::update('Page', array('djg_maintenance' => $status), 'id = ?', array($page->id));
+}
+
+function djg_maintenance_display_dropdown(&$page)
 {
-    echo '<p><label for="djg_gallery_checkbox">'.__('Maintenance').'</label> <select id="djg_maintenance_checkbox" name="page[djg_maintenance]">';
+    echo '<p><label for="page_djg_maintenance_status">'.__('Maintenance').'</label><select id="page_djg_maintenance_status" name="page[djg_maintenance]">';
     echo '<option value="1"'.($page->djg_maintenance == 1 ? ' selected="selected"': '').'>'.__('exception').'</option>';
     echo '<option value="0"'.($page->djg_maintenance == 0 ? ' selected="selected"': '').'>'.__('no exception').'</option>';
-    echo '</select></p>';
+    echo '</select></p>';	
 }
 Plugin::addController('djg_maintenance', __('[djg] Maintenance'),true,false);
 
