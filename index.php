@@ -24,6 +24,9 @@ Plugin::setInfos(array(
  */
 define('DJG_MAINTENANCE_ROOT', PATH_PUBLIC.'wolf/plugins/djg_maintenance');
 
+// Load class into the system.
+AutoLoader::addFolder(dirname(__FILE__) . '/models');
+
 Behavior::add('djg_maintenance', '');
 Observer::observe('page_requested', 'maintenance_page_requested');
 Observer::observe('view_page_edit_plugins', 'djg_maintenance_display_dropdown');

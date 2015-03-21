@@ -20,8 +20,9 @@ class DjgMaintenanceController extends PluginController {
         $this->settings();
     }
 	
-    public function documentation() {
-        $this->display('djg_maintenance/views/documentation');
+	public function documentation() {
+		$content = Parsedown::instance()->parse(file_get_contents(PLUGINS_ROOT.DS.'djg_maintenance'.DS.'README.md'));
+        $this->display('djg_maintenance/views/documentation', array('content'=>$content));
     }
 	
 	public function _changeStatus() {
