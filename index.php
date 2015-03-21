@@ -16,7 +16,7 @@ Plugin::setInfos(array(
     'version'     => '0.10',
     'author'      => 'Michał Uchnast',
     'website'     => 'http://www.kreacjawww.pl/',
-    'update_url'  => 'http://kreacjawww.pl/public/wolf_plugins/plugin-versions.xml'
+    'update_url'  => 'https://raw.githubusercontent.com/djgprv/djg_maintenance/master/versions.xml'
 ));
 
 /**
