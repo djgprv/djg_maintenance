@@ -40,10 +40,10 @@ $url = get_url('plugin/djg_maintenance/_changeStatus');
 $status = Plugin::getSetting('status', 'djg_maintenance');
 switch ($status) {
     case 'on':
-        ?><p class="button"><a href="<?php echo $url; ?>?status=off"><img src="<?php echo PLUGINS_URI;?>/djg_maintenance/images/48_off.png" align="middle" alt="settings icon" /> <?php echo __('Turn off maintenance mode'); ?></a></p><?php
+        ?><p class="button"><a style="color:red; text-shadow: 0 0 4px #FFBBCC;" href="<?php echo $url; ?>?status=off"><img src="<?php echo PLUGINS_URI;?>/djg_maintenance/images/48_off.png" align="middle" alt="settings icon" /> <?php echo __('Turn off maintenance mode'); ?></a></p><?php
         break;
     case 'off':
-        ?><p class="button"><a href="<?php echo $url; ?>?status=on"><img src="<?php echo PLUGINS_URI;?>/djg_maintenance/images/48_on.png" align="middle" alt="settings icon" /> <?php echo __('Turn on maintenance mode'); ?></a></p><?php
+        ?><p class="button"><a style="color:#339900; text-shadow: 0 0 4px #99FFCC;" href="<?php echo $url; ?>?status=on"><img src="<?php echo PLUGINS_URI;?>/djg_maintenance/images/48_on.png" align="middle" alt="settings icon" /> <?php echo __('Turn on maintenance mode'); ?></a></p><?php
         break;
 	default:
       echo "<p class='red'>".__('Something wrong, reinstall plugin please!')."</p>";
